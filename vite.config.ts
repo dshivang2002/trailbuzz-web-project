@@ -5,7 +5,7 @@ const env = loadEnv("development", process.cwd(), "");
  
 export default defineConfig({
   tanstackStart: {
-    server: { entry: "server" },
+    server: {  allowedHosts: ["trailbuzz-web-project.onrender.com"] },
   },
   nitro: { preset: "vercel" },
   vite: {
