@@ -4,11 +4,12 @@ import { loadEnv } from "vite";
 const env = loadEnv("development", process.cwd(), "");
  
 export default defineConfig({
-  tanstackStart: {
-    server: {  allowedHosts:"all", },
-  },
+  tanstackStart: {},
   nitro: { preset: "vercel" },
   vite: {
+    server: {
+      allowedHosts: ["all"],
+    },
     define: {
       "process.env.SUPABASE_URL": JSON.stringify(env.SUPABASE_URL),
       "process.env.SUPABASE_SERVICE_ROLE_KEY": JSON.stringify(env.SUPABASE_SERVICE_ROLE_KEY),
@@ -18,4 +19,3 @@ export default defineConfig({
     },
   },
 });
- 
